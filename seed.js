@@ -1,31 +1,24 @@
-const mongoose = require('mongoose') ; 
+const mongoose = require('mongoose'); 
 const Product = require('./models/Product') ; 
 
-let sampleData = [
+let data = [
     {
-        name : 'I Phone 17 Pro', 
-        img : 'https://th.bing.com/th/id/OIP.TCdwWPVIHbuoNidTsimPGQHaHa?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3',
-        price : 134900 , 
-        desc : 'Buy Apple iPhone 17 Pro online at best price with offers in India. Apple iPhone 17 Pro (Deep Blue, 512 GB) features and specifications include 512 GB ROM, 48 MP Camera'
-    } , 
-    {
-        name : 'Macbook Pro 2026' ,
-        img : `https://m.media-amazon.com/images/I/61h78UMEXjL._SL1500_.jpg`, 
-        price : 274990 , 
-        desc : `Apple 2026 MacBook Pro Laptop with M5 Pro chip with 18‑core CPU and 20‑core GPU: Built for AI, 41.05 cm (16.2″) Liquid Retina XDR Display, 24GB Unified Memory, 1TB SSD Storage; Space Black`
+        name : 'I Phone 17 Pro Max', 
+        img : 'https://www.mobiledokan.com/media/apple-iphone-17-pro-max-white-official-image_1.webp' , 
+        price : 149999 , 
+        desc : 'The iPhone 17 is also sai d to come with an improved Apple A19 chip and Apple GPU (5-core graphics). Further, the camera system is quad 48 MP, and the improvement of the selfie camera is 24 MP.1080p with 24/30fps support and it is backed by a 3692 mAh battery using 25W wireless (MagSafe). The Apple iPhone 17 price in Bangladesh is BDT 1,47,499 (Official) with 8GB of RAM and 256GB of phone storage.'
     }, 
     {
-        name : `Samsung S24 Ultra` , 
-        img :  'https://m.media-amazon.com/images/I/21nGAfj+EmL._QL70_FMwebp_.jpg' ,
-        price : 59780 ,
-        desc : 'Samsung Galaxy S24 Snapdragon 5G (Onyx Black, 256 GB) (8 GB RAM)'
+        name : 'Asus TUF F-15 RTX 4060', 
+        img : 'https://rukminim2.flixcart.com/image/1736/1736/xif0q/computer/u/f/j/-original-imahg5fuq86bnzde.jpeg?q=90' ,
+        price : 110000 , 
+        desc : 'ASUS TUF Gaming F15, 90WHrs Battery Intel Core i7 13th Gen 13620H - (16 GB/512 GB SSD/Windows 11 Home/8 GB Graphics/NVIDIA 4060'
     }
 ]
 
-async function seedDB()
-{
-    await Product.insertMany(sampleData) ; 
-    console.log(`Data Added Succesfully...`) ;
+async function seedDB() {
+    await Product.insertMany(data) ; 
+    console.log(`Data Added...`) ;
 }
 
-module.exports = seedDB ; 
+module.exports = seedDB ;
