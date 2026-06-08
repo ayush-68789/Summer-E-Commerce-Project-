@@ -8,9 +8,11 @@
                     <div class="card-body">
                         <h5 class="card-title"><%=x.name%></h5>
                         <p class="card-text"><%=x.desc%></p>
-                        <p class="card-text"><%=x.price%></p>
-                        <a href="#" class="btn btn-primary">Buy</a>
-                        <a href="/products/<%= x.id%>" class="btn btn-primary">View</a>
+                        <p class="card-text">₹<%=x.price%></p>
+                        <a href="/products/<%= x.id%>" class="btn btn-primary">View Product</a>
+                        <form action="/products/<%=x.id%>?_method=DELETE" method="POST">
+                            <button class="submit btn btn-danger">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>

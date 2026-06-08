@@ -1,5 +1,6 @@
 const path = require('path') ;
 const ejsmate = require('ejs-mate') ;
+const methodoverride = require('method-override') ;
 
 const express = require('express') ; 
 const app = express() ;
@@ -16,6 +17,7 @@ app.set('view engine', 'ejs') ;  // set view engine to ejs
 app.set('views', path.join(__dirname, 'views')) ;  // views folder
 app.use(express.static(path.join(__dirname , 'public'))) // public folder
 app.use(express.urlencoded({extended: true})) ;
+app.use(methodoverride('_method')) ; // ab mein method override ko _method se access kr pauga
 
 app.use(productRoutes) ;
 
