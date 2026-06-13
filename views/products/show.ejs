@@ -17,5 +17,53 @@
     </div>
     <div class="col-lg-6 mx-auto">
         <h1 class="display-5">Leave a Review</h1>
-    </div>2
+            <form action="/products/<%=prod.id%>/review" method="POST">
+                <!-- starability css  -->
+                <fieldset class="starability-basic">
+                    <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+
+                    <input type="radio" id="first-rate1" name="rating" value="1" />
+                    <label for="first-rate1" title="Terrible">1 star</label>
+
+                    <input type="radio" id="first-rate2" name="rating" value="2" />
+                    <label for="first-rate2" title="Not good">2 stars</label>
+
+                    <input type="radio" id="first-rate3" name="rating" value="3" />
+                    <label for="first-rate3" title="Average">3 stars</label>
+
+                    <input type="radio" id="first-rate4" name="rating" value="4" />
+                    <label for="first-rate4" title="Very good">4 stars</label>
+
+                    <input type="radio" id="first-rate5" name="rating" value="5" />
+                    <label for="first-rate5" title="Amazing">5 stars</label>
+                </fieldset>
+
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment: </label>
+                    <input type="text" id = "comment" class="form-control" placeholder="Feel free to comment" name="comment">
+                </div>
+
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+            <div class="my-3">
+               <% for(let x of prod.reviews){ %>
+                    <div class="card mt-3 p-3  ">
+                        <div class="d-flex ms-3">
+                            <h4 >Rating: </h4>
+                            <p class="starability-result ms-3" data-rating="<%=x.rating%>"></p>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title d-inline">Comment: </h5>
+                            <p class="card-text d-inline"><%=x.comment%></p>
+                        </div>
+                        <% if(x.createdAt){ %>
+                            <p class="mx-auto">On: <%=x.createdAt.toDateString() %></p>
+                        <% } %>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+               <% } %>
+            </div>
+    </div>
+
 </div>                      

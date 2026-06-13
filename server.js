@@ -8,6 +8,7 @@ const app = express() ;
 const connectDB = require('./config/db') ;
 const seedDB = require('./seed'); 
 const productRoutes = require('./routes/product') ; 
+const reviewRoutes = require('./routes/review') ;
 
 connectDB() ; // connect DB
 // seedDB() ; // Seeding db
@@ -20,6 +21,7 @@ app.use(express.urlencoded({extended: true})) ;
 app.use(methodoverride('_method')) ; // ab mein method override ko _method se access kr pauga
 
 app.use(productRoutes) ;
+app.use(reviewRoutes) ;
 
 const PORT = 5050 ; 
 app.listen((PORT), ()=> {

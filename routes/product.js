@@ -22,7 +22,8 @@ Router.post('/products', async(req ,res)=> {
 // to show specific product details
 Router.get('/products/:id', async (req ,res)=> {
     let {id} = req.params ;
-    let prod = await Products.findById(id) ;
+    // let prod = await Products.findById(id) ;
+    let prod = await Products.findById(id).populate('reviews') ;  // reviews ke saath dikhana h to populate use krte hein ab product ke saath reviews bhi hein
     res.render('products/show', {prod}) ;
 })
 
