@@ -2,7 +2,7 @@
 <%- include ('../partials/navbar') %>
 
 <div class="col-6 mx-auto">
-    <form action="/products/<%=prod.id%>?_method=PATCH" method="POST">
+    <form action="/products/<%=prod._id%>?_method=PATCH" method="POST">
       <div class="mb-3">
         <label for="naam" class="form-label">Name: </label>
         <input type="text" class="form-control" placeholder="Name of the Product"  id="naam" name="name" value='<%=prod.name%>'>   <!--provide name attribute as the same name of the schema properites dont use other name like namee or naam-->

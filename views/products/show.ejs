@@ -9,7 +9,7 @@
                 <p class="card-text"><%=prod.desc%></p>
                 <p class="card-text">₹<%=prod.price%></p>
                 <a href="/products" class="btn btn-info">Home</a>
-                <a href="/products/<%=prod.id%>/edit" class="btn btn-primary">Edit</a>
+                <a href="/products/<%=prod._id%>/edit" class="btn btn-primary">Edit</a>
                 <a href="#" class="btn btn-secondary">Add to Cart</a>
                 <a href="#" class="btn btn-success">Buy</a>
             </div>
@@ -17,7 +17,7 @@
     </div>
     <div class="col-lg-6 mx-auto">
         <h1 class="display-5">Leave a Review</h1>
-            <form action="/products/<%=prod.id%>/review" method="POST">
+            <form action="/products/<%=prod._id%>/review" method="POST">
                 <!-- starability css  -->
                 <fieldset class="starability-basic">
                     <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
